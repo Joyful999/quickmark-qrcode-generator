@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opening app…</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FF4A1C">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+  <div class="redirect-wrap">
+    <div class="redirect-card finder" id="card">
+      <div class="redirect-spinner" id="spinner"></div>
+      <h1 id="title">Taking you to the app…</h1>
+      <p id="subtitle">Detecting your device so we can send you to the right store.</p>
+      <div class="store-buttons" id="manual-buttons"></div>
+      <p style="margin-top:20px;font-size:12.5px;">
+        <a href="index.html" style="color:var(--text-muted);text-decoration:underline;">Back to QuickMark</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+<noscript>
+  <div class="container" style="padding:40px 24px;text-align:center;">
+    <p>This link needs JavaScript enabled to detect your device automatically. Choose your store below:</p>
+  </div>
+</noscript>
+
+<script>
+(function () {
+  "use strict";
+
+  function qs(name) {
+    var params = new URLSearchParams(window.location.search);
+    var v = params.get(name);
+    return v ? v : "";
+  }
+
+  var iosUrl = qs("ios");
+  var androidUrl = qs("android");
+  var fallbackUrl = qs("fallback");
+
+  var ua = navigator.userAgent || navigator.vendor || "";
+  var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  var isAndroid = /Android/i.test(ua);
+
+  var target = null;
+  if (isIOS && iosUrl) target = iosUrl;
+  else if (isAndroid && androidUrl) target = androidUrl;
+  else if (fallbackUrl) target = fallbackUrl;
+  else if (iosUrl) target = iosUrl;
+  else if (androidUrl) target = androidUrl;
+
+  var titleEl = document.getElementById("title");
+  var subtitleEl = document.getElementById("subtitle");
+  var spinnerEl = document.getElementById("spinner");
+  var buttonsEl = document.getElementById("manual-buttons");
+
+  function storeButton(label, href) {
+    var a = document.createElement("a");
+    a.className = "btn btn-secondary";
+    a.href = href;
+    a.rel = "noopener";
+    a.textContent = label;
+    return a;
+  }
+
+  if (!iosUrl && !androidUrl) {
+    spinnerEl.style.display = "none";
+    titleEl.textContent = "No app link was provided.";
+    subtitleEl.textContent = "This QR code is missing its App Store or Play Store link.";
+  } else {
+    subtitleEl.textContent = "If nothing happens in a few seconds, use a button below.";
+    if (iosUrl) buttonsEl.appendChild(storeButton("Open in App Store", iosUrl));
+    if (androidUrl) buttonsEl.appendChild(storeButton("Open on Google Play", androidUrl));
+    setTimeout(function () {
+      window.location.replace(target);
+    }, 400);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /app.html
+Disallow: /view.html
+
+Sitemap: https://www.quickmark.app/sitemap.xml

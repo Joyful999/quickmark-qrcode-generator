@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shared text — QuickMark</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FF4A1C">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+  <div class="redirect-wrap">
+    <div class="viewer-card" id="card">
+      <span class="viewer-label">Text from a QR code</span>
+      <pre id="text-output"></pre>
+      <div class="hero-cta" style="margin-top:0;">
+        <button class="btn btn-primary" id="copy-btn" type="button">Copy text</button>
+        <a href="index.html" class="btn btn-secondary">Make your own QR code</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var params = new URLSearchParams(window.location.search);
+  var text = params.get("t") || "";
+  var out = document.getElementById("text-output");
+  var card = document.getElementById("card");
+  var copyBtn = document.getElementById("copy-btn");
+
+  if (!text) {
+    card.innerHTML = '<span class="viewer-label">Nothing here</span><p style="color:var(--text-muted);">This link did not include any text to display.</p><div class="hero-cta" style="margin-top:16px;"><a href="index.html" class="btn btn-primary">Go to QuickMark</a></div>';
+    return;
+  }
+
+  out.textContent = text;
+
+  copyBtn.addEventListener("click", function () {
+    navigator.clipboard.writeText(text).then(function () {
+      copyBtn.textContent = "Copied!";
+      setTimeout(function () { copyBtn.textContent = "Copy text"; }, 1800);
+    }).catch(function () {
+      copyBtn.textContent = "Couldn't copy";
+    });
+  });
+})();
+</script>
+</body>
+</html>

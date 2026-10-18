@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About QuickMark — A Private, Browser-Based QR Code Generator</title>
+<meta name="description" content="QuickMark is a free QR code generator that runs entirely in your browser. Learn why we built it, how it protects your data, and what makes it different.">
+<link rel="canonical" href="https://www.quickmark.app/about.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF4A1C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About QuickMark">
+<meta property="og:description" content="Why we built a QR code generator with no backend, no accounts, and no data collection.">
+<meta property="og:url" content="https://www.quickmark.app/about.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="QuickMark home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="19" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="2" y="19" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="20.5" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+        <rect x="26" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="20.5" y="26" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="26" y="26" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+      </svg>
+      QuickMark
+    </a>
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="index.html#generator">Generator</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="nav-burger" data-nav-burger type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="simple-hero">
+    <div class="container">
+      <span class="updated-badge">Est. 2024 · Independent tool</span>
+      <h1>A QR generator that keeps your data where it belongs — with you.</h1>
+      <p>QuickMark started as a simple question: why does generating a QR code require sending your link, WiFi password, or contact details to someone else's server? It doesn't. Here's how we built one that never has to.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:24px;">
+    <div class="container">
+      <div class="value-grid">
+        <div class="value-card">
+          <h3>Local by design</h3>
+          <p>Every QR code is drawn pixel-by-pixel in your browser's own JavaScript engine. There's no API call, no upload, and no server that ever sees what you typed.</p>
+        </div>
+        <div class="value-card">
+          <h3>No accounts, ever</h3>
+          <p>We don't ask for an email address to unlock features, and we never will. Open the page, generate your code, move on with your day.</p>
+        </div>
+        <div class="value-card">
+          <h3>Built to last</h3>
+          <p>No frameworks, no build pipeline, no dependency chain that can break. Just HTML, CSS, and JavaScript — the same stack the web was built on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="prose">
+        <h2>Why we built it this way</h2>
+        <p>Most "free" QR generators aren't really free — they trade convenience for your data, adding tracking pixels, mandatory accounts, or watermarks that only disappear behind a paywall. We wanted something closer to a utility: a tool you reach for the way you'd reach for a calculator, without wondering what happens to the numbers afterward.</p>
+        <p>That constraint shaped every decision. Generating QR codes entirely client-side meant we couldn't rely on a backend to handle complex encoding logic, so the encoder itself runs directly in your browser tab. It meant giving up "cloud sync" for your QR history, because keeping no server means keeping no history at all. We think that trade-off is the right one.</p>
+
+        <h2>Who this is for</h2>
+        <p>QuickMark is built for anyone who needs a QR code and would rather not think twice about it: small business owners printing a menu, event organizers sharing a WiFi password, developers linking to a repo, or anyone pasting a link into a design file. <strong>If you can type it, you can encode it.</strong></p>
+
+        <h2>What's next</h2>
+        <p>We keep the tool intentionally small, but we're always refining the details — better color contrast checking, more content types, and continued attention to accessibility and performance. If there's something you'd like to see, the <a href="contact.html">contact page</a> reaches us directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band finder">
+        <div class="module-field" aria-hidden="true"></div>
+        <div>
+          <h2>See it in action.</h2>
+          <p>No sign-up required — just open the generator and try it.</p>
+        </div>
+        <a href="index.html#generator" class="btn btn-primary">Open the generator</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="QuickMark home">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+            <rect x="19" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+            <rect x="2" y="19" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+            <rect x="20.5" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+            <rect x="26" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+            <rect x="20.5" y="26" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+            <rect x="26" y="26" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+          </svg>
+          QuickMark
+        </a>
+        <p>A free, browser-based QR code generator. No account, no server, no limits — just fast, private QR codes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#generator">Generator</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> QuickMark. All rights reserved.</span>
+      <!-- <span>Built with HTML, CSS &amp; vanilla JavaScript.</span> -->
+    </div>
+  </div>
+</footer>
+
+<script src="js/qrcode.lib.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

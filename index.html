@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickMark — Free QR Code Generator Online | No Sign-Up, No Limits</title>
+<meta name="description" content="Create unlimited custom QR codes free — for URLs, WiFi, email, WhatsApp, SMS, and locations. Everything runs in your browser: no account, no data sent anywhere, high-resolution PNG & SVG downloads.">
+<meta name="keywords" content="QR code generator, free QR code generator, create QR code online, QR code maker, generate QR code free, URL QR code generator, WiFi QR code generator">
+<link rel="canonical" href="https://www.quickmark.app/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF4A1C">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="QuickMark — Free QR Code Generator Online">
+<meta property="og:description" content="Generate unlimited custom QR codes in your browser. No account, no data collection, high-resolution PNG & SVG downloads.">
+<meta property="og:url" content="https://www.quickmark.app/">
+<meta property="og:site_name" content="QuickMark">
+<!-- <meta property="og:image" content="https://www.quickmark.app/assets/og-cover.png"> -->
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QuickMark — Free QR Code Generator Online">
+<meta name="twitter:description" content="Create unlimited custom QR codes in your browser. No account, no tracking, high-resolution downloads.">
+<meta name="twitter:image" content="https://www.quickmark.app/assets/og-cover.png">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "QuickMark",
+  "url": "https://www.quickmark.app/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free browser-based QR code generator for URLs, text, email, phone, SMS, WhatsApp, WiFi, and locations. No sign-up, no data leaves your device.",
+  "featureList": "Unlimited QR codes, custom colors, adjustable size and margin, error correction levels, PNG and SVG export, print support"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is a QR code?","acceptedAnswer":{"@type":"Answer","text":"A QR (Quick Response) code is a two-dimensional barcode that stores information — like a link, text, or contact details — in a grid of black and white squares that any smartphone camera can scan."}},
+    {"@type":"Question","name":"How does a QR code generator work?","acceptedAnswer":{"@type":"Answer","text":"You enter the content you want to share, and the generator encodes it into a pattern of modules following the QR standard. QuickMark does this instantly in your browser using JavaScript — nothing is uploaded to a server."}},
+    {"@type":"Question","name":"Is QuickMark really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. QuickMark is completely free, with no limits on how many QR codes you can generate and no watermarks on your downloads."}},
+    {"@type":"Question","name":"Is my data stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Every QR code is generated locally on your device. QuickMark has no backend, no database, and no account system, so nothing you type is ever transmitted or saved."}},
+    {"@type":"Question","name":"Can I use these QR codes commercially?","acceptedAnswer":{"@type":"Answer","text":"Yes. QR codes generated with QuickMark are yours to use however you like, including on products, packaging, ads, menus, and business cards."}},
+    {"@type":"Question","name":"Which devices can scan QR codes?","acceptedAnswer":{"@type":"Answer","text":"Nearly every modern smartphone can scan QR codes directly from its built-in camera app, on both iOS and Android, without installing a separate app."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================= NAV ============================= -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="QuickMark home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="19" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="2" y="19" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="20.5" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+        <rect x="26" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="20.5" y="26" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="26" y="26" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+      </svg>
+      QuickMark
+    </a>
+
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="index.html#generator">Generator</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="nav-burger" data-nav-burger type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="module-field" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Runs 100% in your browser</span>
+        <h1>Turn anything into a <em>scannable</em> QR code.</h1>
+        <p class="lead">Free, unlimited, and private by design. QuickMark builds your QR code on your own device — no uploads, no accounts, no waiting.</p>
+        <div class="hero-cta">
+          <a href="#generator" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M20 14v3M14 20h3M20 20v.01"/></svg>
+            Generate a QR code
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>9</b><span>content types</span></div>
+          <div class="hero-stat"><b>0</b><span>data sent to a server</span></div>
+          <div class="hero-stat"><b>∞</b><span>QR codes, always free</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="qr-live-card finder">
+          <div class="qr-badge"><span class="dot"></span> LIVE PREVIEW</div>
+          <div class="qr-stage" data-hero-stage aria-live="polite"></div>
+          <input data-hero-input type="text" inputmode="url" placeholder="Try typing your website URL…" aria-label="Type a URL to preview a live QR code">
+          <p class="qr-hint">This box updates as you type — the full generator below has colors, sizing, and downloads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= GENERATOR ============================= -->
+  <section class="section" id="generator">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">The generator</span>
+        <h2>Every detail, in your control.</h2>
+        <p>Pick a content type, fill in the details, then fine-tune colors, size, margin, and error correction. Your QR code updates instantly — nothing to click, nothing to wait for.</p>
+      </div>
+
+      <div class="generator" data-generator>
+        <div class="gen-grid">
+          <div class="gen-panel">
+
+            <div class="type-picker" role="group" aria-label="QR code content type">
+              <button class="type-btn" data-type="url" aria-pressed="true" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.2 1.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></svg>
+                Website
+              </button>
+              <button class="type-btn" data-type="text" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                Text
+              </button>
+              <button class="type-btn" data-type="email" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 6.5 8 6 8-6"/></svg>
+                Email
+              </button>
+              <button class="type-btn" data-type="phone" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.3c1.3.4 2.7.6 4.1.6a1.2 1.2 0 0 1 1.2 1.2V20a1.2 1.2 0 0 1-1.2 1.2C10.3 21.2 2.8 13.7 2.8 4.5A1.2 1.2 0 0 1 4 3.3h3.3a1.2 1.2 0 0 1 1.2 1.2c0 1.4.2 2.8.6 4.1a1.2 1.2 0 0 1-.3 1.2Z"/></svg>
+                Phone
+              </button>
+              <button class="type-btn" data-type="sms" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+                SMS
+              </button>
+              <button class="type-btn" data-type="whatsapp" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.4-4.6A8.5 8.5 0 1 1 8 19.5Z"/><path d="M9 10c0 3 2.5 5.5 5.5 5.5"/></svg>
+                WhatsApp
+              </button>
+              <button class="type-btn" data-type="wifi" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a16 16 0 0 1 20 0"/><path d="M5.5 13a11 11 0 0 1 13 0"/><path d="M9 17a6 6 0 0 1 6 0"/><path d="M12 21h.01"/></svg>
+                WiFi
+              </button>
+              <button class="type-btn" data-type="location" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Location
+              </button>
+              <button class="type-btn" data-type="app" aria-pressed="false" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/><path d="M9 6h6"/></svg>
+                App
+              </button>
+            </div>
+
+            <!-- URL -->
+            <div class="field-group" data-fields="url">
+              <label class="field-label" for="url-input">Website URL <span class="counter">0 / 500</span></label>
+              <input class="field-input" id="url-input" name="url-input" type="text" inputmode="url" maxlength="500" placeholder="example.com or https://example.com">
+              <div class="field-error">That doesn't look like a valid web address.</div>
+              <p class="field-hint">We'll add "https://" automatically if you leave it off.</p>
+            </div>
+
+            <!-- Text -->
+            <div class="field-group hidden" data-fields="text">
+              <label class="field-label" for="text-input">Plain text <span class="counter">0 / 800</span></label>
+              <textarea class="field-textarea" id="text-input" name="text-input" maxlength="800" placeholder="Any note, quote, or message to encode"></textarea>
+              <p class="field-hint">Scanning opens a page (hosted alongside this site) that displays your text and lets the visitor copy it — rather than leaving it to whatever a scanner app happens to do with raw text.</p>
+            </div>
+
+            <!-- Email -->
+            <div class="field-group hidden" data-fields="email">
+              <label class="field-label" for="email-to">Recipient email <span class="counter">0 / 200</span></label>
+              <input class="field-input" id="email-to" name="email-to" type="email" maxlength="200" placeholder="name@example.com">
+              <div class="field-error">Enter a valid email address.</div>
+              <label class="field-label" style="margin-top:14px;" for="email-subject">Subject</label>
+              <input class="field-input" id="email-subject" name="email-subject" type="text" maxlength="150" placeholder="Let's talk">
+              <label class="field-label" style="margin-top:14px;" for="email-body">Message</label>
+              <textarea class="field-textarea" id="email-body" name="email-body" maxlength="500" placeholder="Optional pre-filled message"></textarea>
+            </div>
+
+            <!-- Phone -->
+            <div class="field-group hidden" data-fields="phone">
+              <label class="field-label" for="phone-input">Phone number <span class="counter">0 / 30</span></label>
+              <input class="field-input" id="phone-input" name="phone-input" type="tel" maxlength="30" placeholder="+1 555 123 4567">
+              <div class="field-error">Enter a valid phone number, digits only (with optional +).</div>
+              <p class="field-hint">Scanning opens the phone's dialer, pre-filled and ready to call.</p>
+            </div>
+
+            <!-- SMS -->
+            <div class="field-group hidden" data-fields="sms">
+              <label class="field-label" for="sms-number">Phone number <span class="counter">0 / 30</span></label>
+              <input class="field-input" id="sms-number" name="sms-number" type="tel" maxlength="30" placeholder="+1 555 123 4567">
+              <div class="field-error">Enter a valid phone number.</div>
+              <label class="field-label" style="margin-top:14px;" for="sms-message">Pre-filled message <span class="counter">0 / 300</span></label>
+              <textarea class="field-textarea" id="sms-message" name="sms-message" maxlength="300" placeholder="Optional message text"></textarea>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="field-group hidden" data-fields="whatsapp">
+              <label class="field-label" for="wa-number">WhatsApp number <span class="counter">0 / 30</span></label>
+              <input class="field-input" id="wa-number" name="wa-number" type="tel" maxlength="30" placeholder="Country code + number, no spaces">
+              <div class="field-error">Enter a valid phone number.</div>
+              <label class="field-label" style="margin-top:14px;" for="wa-message">Pre-filled message <span class="counter">0 / 300</span></label>
+              <textarea class="field-textarea" id="wa-message" name="wa-message" maxlength="300" placeholder="Hi! I'd like to know more about…"></textarea>
+            </div>
+
+            <!-- WiFi -->
+            <div class="field-group hidden" data-fields="wifi">
+              <label class="field-label" for="wifi-ssid">Network name (SSID) <span class="counter">0 / 60</span></label>
+              <input class="field-input" id="wifi-ssid" name="wifi-ssid" type="text" maxlength="60" placeholder="MyHomeNetwork">
+              <label class="field-label" style="margin-top:14px;" for="wifi-password">Password <span class="counter">0 / 60</span></label>
+              <input class="field-input" id="wifi-password" name="wifi-password" type="text" maxlength="60" placeholder="Network password">
+              <label class="field-label" style="margin-top:14px;" for="wifi-enc">Security type</label>
+              <select class="field-select" id="wifi-enc" name="wifi-enc">
+                <option value="WPA">WPA / WPA2 / WPA3</option>
+                <option value="WEP">WEP</option>
+                <option value="nopass">No password (open network)</option>
+              </select>
+              <p class="field-hint">Scanning connects the phone straight to this network — no typing required.</p>
+            </div>
+
+            <!-- Location -->
+            <div class="field-group hidden" data-fields="location">
+              <div class="field-row">
+                <div>
+                  <label class="field-label" for="geo-lat">Latitude</label>
+                  <input class="field-input" id="geo-lat" name="geo-lat" type="text" inputmode="decimal" placeholder="40.7484">
+                  <div class="field-error">Enter a valid latitude.</div>
+                </div>
+                <div>
+                  <label class="field-label" for="geo-lng">Longitude</label>
+                  <input class="field-input" id="geo-lng" name="geo-lng" type="text" inputmode="decimal" placeholder="-73.9857">
+                  <div class="field-error">Enter a valid longitude.</div>
+                </div>
+              </div>
+              <p class="field-hint">Scanning opens the location directly in Google Maps.</p>
+            </div>
+
+            <!-- App download -->
+            <div class="field-group hidden" data-fields="app">
+              <div class="app-field-row">
+                <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 1.5 3L17 6l-3 2 1 3.5-3-2-3 2 1-3.5-3-2 3.5-.5Z"/><path d="M12 22a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/></svg>
+                <label class="field-label" for="app-ios" style="margin:0; flex:1;">Apple App Store link <span class="counter">0 / 300</span></label>
+              </div>
+              <input class="field-input" id="app-ios" name="app-ios" type="url" maxlength="300" placeholder="https://apps.apple.com/app/id0000000000">
+              <div class="field-error">Enter a valid apps.apple.com link.</div>
+
+              <div class="app-field-row" style="margin-top:14px;">
+                <svg class="store-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 11 9-11 9V3Z"/><path d="m14 12 4.5-3 3 3-3 3-4.5-3Z"/></svg>
+                <label class="field-label" for="app-android" style="margin:0; flex:1;">Google Play Store link <span class="counter">0 / 300</span></label>
+              </div>
+              <input class="field-input" id="app-android" name="app-android" type="url" maxlength="300" placeholder="https://play.google.com/store/apps/details?id=com.example.app">
+              <div class="field-error">Enter a valid play.google.com link.</div>
+
+              <label class="field-label" style="margin-top:14px;" for="app-fallback">Fallback link (optional)</label>
+              <input class="field-input" id="app-fallback" name="app-fallback" type="url" maxlength="300" placeholder="https://yourapp.com/download">
+
+              <p class="field-hint">One QR code for both stores: scanning it opens a tiny page (hosted alongside this site) that detects iPhone vs. Android and sends the visitor straight to the right store. Fill in at least one store link.</p>
+            </div>
+
+            <div class="divider-label">Appearance</div>
+
+            <div class="style-row">
+              <div class="color-field">
+                <input type="color" id="fg-color" name="fg-color" data-fg value="#101114" aria-label="Foreground color">
+                <span>Foreground</span>
+                <code data-fg-hex>#101114</code>
+              </div>
+              <div class="color-field">
+                <input type="color" id="bg-color" name="bg-color" data-bg value="#ffffff" aria-label="Background color">
+                <span>Background</span>
+                <code data-bg-hex>#FFFFFF</code>
+              </div>
+            </div>
+
+            <div class="slider-field">
+              <label class="field-label" for="size-range">Download size <span data-size-val>512 px</span></label>
+              <input type="range" id="size-range" name="size-range" data-size min="128" max="2048" step="64" value="512">
+            </div>
+
+            <div class="slider-field">
+              <label class="field-label" for="margin-range">Quiet-zone margin <span data-margin-val>4</span></label>
+              <input type="range" id="margin-range" name="margin-range" data-margin min="0" max="10" step="1" value="4">
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="logo-upload">Center logo <span class="field-hint" style="margin:0;">(optional)</span></label>
+              <div class="logo-upload-row">
+                <div class="logo-thumb" data-logo-thumb hidden>
+                  <img alt="Uploaded logo preview" data-logo-preview>
+                </div>
+                <div class="logo-upload-empty" data-logo-empty>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.8"/><path d="m21 15-5-5-9 9"/></svg>
+                </div>
+                <div class="logo-upload-actions">
+                  <label class="btn btn-secondary logo-upload-btn" for="logo-upload">Choose image</label>
+                  <input type="file" id="logo-upload" data-logo-input accept="image/png, image/jpeg, image/svg+xml, image/webp" class="visually-hidden">
+                  <button class="btn btn-ghost" type="button" data-logo-remove hidden>Remove</button>
+                </div>
+              </div>
+              <div class="slider-field" data-logo-size-field hidden style="margin-top:14px;">
+                <label class="field-label" for="logo-size-range">Logo size <span data-logo-size-val>20%</span></label>
+                <input type="range" id="logo-size-range" name="logo-size-range" data-logo-size min="12" max="30" step="1" value="20">
+              </div>
+              <p class="field-hint">Square logos work best. We automatically raise error correction to "High" so the code still scans reliably with a logo covering the middle.</p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="ec-select">Error correction</label>
+              <select class="field-select" id="ec-select" name="ec-select" data-ec>
+                <option value="L">L — Low (~7% recovery)</option>
+                <option value="M" selected>M — Medium (~15% recovery)</option>
+                <option value="Q">Q — Quartile (~25% recovery)</option>
+                <option value="H">H — High (~30% recovery)</option>
+              </select>
+              <p class="field-hint">Higher levels stay scannable even if part of the code is damaged or covered — useful if you're adding a logo.</p>
+            </div>
+
+          </div>
+
+          <div class="gen-preview">
+            <div class="qr-stage-wrap">
+              <div class="qr-canvas-holder" data-canvas-holder hidden></div>
+              <div class="qr-empty" data-empty-state>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M20 14v3M14 20h3M20 20v.01"/></svg>
+                <p>Fill in the fields on the left and your QR code will appear here.</p>
+              </div>
+            </div>
+            <div class="gen-meta" data-gen-meta></div>
+
+            <div class="download-row">
+              <button class="btn btn-primary" data-download-png type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                PNG
+              </button>
+              <button class="btn btn-ghost" data-download-svg type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                SVG
+              </button>
+              <button class="btn btn-ghost" data-print type="button" aria-label="Print QR code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
+              </button>
+            </div>
+            <div class="gen-actions">
+              <button class="btn btn-secondary" data-copy type="button">Copy content</button>
+              <button class="btn btn-secondary" data-reset type="button">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FEATURES ============================= -->
+  <section class="section section-alt" id="features">
+    <div class="container">
+      <div class="section-head center">
+        <span class="section-eyebrow">Why QuickMark</span>
+        <h2>Built to be the last QR tool you need.</h2>
+        <p>No paywalls, no watermarks, no tracking scripts — just a fast, capable generator that respects your data.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/></svg></div>
+          <h3>100% free</h3>
+          <p>Every feature is available at no cost, with no premium tier hiding the good parts.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Instant generation</h3>
+          <p>QR codes render as you type, with no page reloads or waiting on a server.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+          <h3>Mobile friendly</h3>
+          <p>A responsive layout that works just as well on a phone as it does at a desk.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <h3>Private by default</h3>
+          <p>Generation happens locally in your browser — your content never leaves your device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>No registration</h3>
+          <p>Open the page and start generating — no account, no email, no verification step.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18"/></svg></div>
+          <h3>High resolution</h3>
+          <p>Export up to 2048px PNGs or fully scalable SVGs, sharp at any print size.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Fast performance</h3>
+          <p>A lightweight codebase with no framework overhead means the page loads quickly everywhere.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+          <h3>Unlimited codes</h3>
+          <p>Generate as many QR codes as you need, one after another, with no daily cap.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20Z"/></svg></div>
+          <h3>Works in any browser</h3>
+          <p>Built with standard web technology, so it runs the same across Chrome, Safari, Firefox, and Edge.</p>
+        </div>
+        <div class="feature-card">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 4 8.5 9 9 5-.5 9-4 9-9V7z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Privacy focused</h3>
+          <p>No analytics on your content, no third-party pixels tracking what you generate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= HOW IT WORKS ============================= -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Four steps</span>
+        <h2>From idea to scannable code in seconds.</h2>
+      </div>
+      <div class="steps">
+        <div class="step-card"><span class="step-line"></span><span class="step-num">01</span><h3>Select a type</h3><p>Choose from URL, text, email, phone, SMS, WhatsApp, WiFi, or location.</p></div>
+        <div class="step-card"><span class="step-line"></span><span class="step-num">02</span><h3>Enter your info</h3><p>Fill in the fields for that type — everything is validated as you go.</p></div>
+        <div class="step-card"><span class="step-line"></span><span class="step-num">03</span><h3>Customize the design</h3><p>Adjust colors, size, margin, and error correction to fit your use case.</p></div>
+        <div class="step-card"><span class="step-line"></span><span class="step-num">04</span><h3>Download instantly</h3><p>Save as PNG or SVG, or send straight to print — all at full resolution.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FAQ ============================= -->
+  <section class="section section-alt" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">What is a QR code?<span class="plus"></span></button>
+          <div class="faq-a"><p>A QR (Quick Response) code is a two-dimensional barcode made of black and white squares. It can hold far more information than a traditional barcode — like a full web address, contact card, or WiFi password — and any smartphone camera can read it in an instant.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">How does it work?<span class="plus"></span></button>
+          <div class="faq-a"><p>You type or paste your content into the generator, and QuickMark encodes it into a QR pattern right there in your browser using JavaScript. There's no server round-trip — the code appears the moment you finish typing.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Is it free?<span class="plus"></span></button>
+          <div class="faq-a"><p>Completely. There's no premium tier, no download cap, and no watermark added to your exported files.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Is my data stored?<span class="plus"></span></button>
+          <div class="faq-a"><p>No. QuickMark has no backend or database. Everything you type is processed locally on your device and disappears when you close or refresh the tab.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Can I use it commercially?<span class="plus"></span></button>
+          <div class="faq-a"><p>Yes. Any QR code you generate is yours to use freely — on packaging, menus, business cards, storefronts, or ads.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" aria-expanded="false">Which devices support QR codes?<span class="plus"></span></button>
+          <div class="faq-a"><p>Virtually all modern smartphones can scan a QR code directly from the native camera app on both iOS and Android, with no extra app required.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CTA ============================= -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-band finder">
+        <div class="module-field" aria-hidden="true"></div>
+        <div>
+          <h2>Ready to make your first QR code?</h2>
+          <p>It takes less time to generate one than it did to read this sentence.</p>
+        </div>
+        <a href="#generator" class="btn btn-primary">Start generating — it's free</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" aria-label="QuickMark home">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+            <rect x="19" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+            <rect x="2" y="19" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+            <rect x="20.5" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+            <rect x="26" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+            <rect x="20.5" y="26" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+            <rect x="26" y="26" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+          </svg>
+          QuickMark
+        </a>
+        <p>A free, browser-based QR code generator. No account, no server, no limits — just fast, private QR codes.</p>
+        <!-- <div class="social-row" style="margin-top:18px;">
+          <a href="https://twitter.com" aria-label="QuickMark on Twitter" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.6 0-1.3-.2-1.8-.5v.1a4.1 4.1 0 0 0 3.3 4 4.2 4.2 0 0 1-1.8.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.9c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.2Z"/></svg></a>
+          <a href="https://instagram.com" aria-label="QuickMark on Instagram" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://github.com" aria-label="QuickMark on GitHub" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1-1.4-1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7c-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.9 1a10 10 0 0 1 5.2 0c2-1.3 2.9-1 2.9-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 2v3c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a>
+        </div> -->
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="index.html#generator">Generator</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> QuickMark. All rights reserved.</span>
+      <!-- <span>Built with HTML, CSS &amp; vanilla JavaScript.</span> -->
+    </div>
+  </div>
+</footer>
+
+<script src="js/qrcode.lib.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

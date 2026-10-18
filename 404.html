@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — QuickMark</title>
+<meta name="description" content="The page you're looking for doesn't exist. Head back to QuickMark's free QR code generator.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#FF4A1C">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="QuickMark home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="19" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="2" y="19" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="20.5" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+        <rect x="26" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="20.5" y="26" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="26" y="26" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+      </svg>
+      QuickMark
+    </a>
+    <nav class="nav-links" data-nav-links aria-label="Primary">
+      <a href="index.html#generator">Generator</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="nav-burger" data-nav-burger type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <div class="error-404">
+      <div class="code-404" aria-hidden="true">
+        4<span class="qr-glyph finder"></span>4
+      </div>
+      <h1>This code didn't scan.</h1>
+      <p>The page you're looking for has moved, been renamed, or never existed. Let's get you back to somewhere useful.</p>
+      <div class="hero-cta">
+        <a href="index.html" class="btn btn-primary">Back to home</a>
+        <a href="index.html#generator" class="btn btn-secondary">Open the generator</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <span>© <span data-year>2026</span> QuickMark. All rights reserved.</span>
+      <!-- <span>Built with HTML, CSS &amp; vanilla JavaScript.</span> -->
+    </div>
+  </div>
+</footer>
+
+<script src="js/qrcode.lib.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
