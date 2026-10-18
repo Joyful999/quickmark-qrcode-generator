@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +7,113 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#FF4A1C">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script>
+(function () {
+  try {
+    var theme = localStorage.getItem("quickmark-theme");
+    if (theme === "light" || theme === "dark") document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {}
+})();
+</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<main>
-  <div class="redirect-wrap">
-    <div class="viewer-card" id="card">
-      <span class="viewer-label">Text from a QR code</span>
-      <pre id="text-output"></pre>
-      <div class="hero-cta" style="margin-top:0;">
-        <button class="btn btn-primary" id="copy-btn" type="button">Copy text</button>
-        <a href="index.html" class="btn btn-secondary">Make your own QR code</a>
+<body class="viewer-page">
+<main class="viewer-shell">
+  <header class="viewer-topbar">
+    <a class="viewer-brand" href="index.html" aria-label="QuickMark home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="19" y="2" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="2" y="19" width="11" height="11" rx="2.5" stroke="var(--text)" stroke-width="2.4"/>
+        <rect x="20.5" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+        <rect x="26" y="20.5" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="20.5" y="26" width="3.5" height="3.5" rx="1" fill="var(--text)"/>
+        <rect x="26" y="26" width="3.5" height="3.5" rx="1" fill="var(--accent)"/>
+      </svg>
+      QuickMark
+    </a>
+    <div class="viewer-topbar-actions">
+      <span class="viewer-context">QR message</span>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="viewer-card" id="card" aria-labelledby="viewer-title">
+    <div class="viewer-header">
+      <div class="viewer-symbol" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
+      </div>
+      <div>
+        <span class="viewer-label">Shared text</span>
+        <h1 id="viewer-title">Text from a QR code</h1>
       </div>
     </div>
-  </div>
+
+    <div class="viewer-content">
+      <pre id="text-output"></pre>
+      <p class="viewer-empty-message" id="empty-message" hidden>This link doesn't include any text to display.</p>
+    </div>
+
+    <div class="viewer-actions">
+      <button class="btn btn-primary viewer-copy-btn" id="copy-btn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+        <span id="copy-label" aria-live="polite">Copy text</span>
+      </button>
+      <a href="index.html" class="btn btn-secondary">Create a QR code</a>
+    </div>
+  </section>
+
+  <footer class="viewer-footer">Made with QuickMark</footer>
 </main>
 
 <script>
 (function () {
   "use strict";
+  var root = document.documentElement;
+  var themeToggle = document.getElementById("theme-toggle");
+  var theme = root.getAttribute("data-theme") || "dark";
+  themeToggle.setAttribute("aria-pressed", theme === "dark");
+  themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  themeToggle.addEventListener("click", function () {
+    theme = theme === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", theme);
+    themeToggle.setAttribute("aria-pressed", theme === "dark");
+    themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    try { localStorage.setItem("quickmark-theme", theme); } catch (e) {}
+  });
+
   var params = new URLSearchParams(window.location.search);
   var text = params.get("t") || "";
   var out = document.getElementById("text-output");
-  var card = document.getElementById("card");
+  var title = document.getElementById("viewer-title");
+  var emptyMessage = document.getElementById("empty-message");
   var copyBtn = document.getElementById("copy-btn");
+  var copyLabel = document.getElementById("copy-label");
 
   if (!text) {
-    card.innerHTML = '<span class="viewer-label">Nothing here</span><p style="color:var(--text-muted);">This link did not include any text to display.</p><div class="hero-cta" style="margin-top:16px;"><a href="index.html" class="btn btn-primary">Go to QuickMark</a></div>';
+    title.textContent = "No text found";
+    out.hidden = true;
+    emptyMessage.hidden = false;
+    copyBtn.hidden = true;
     return;
   }
 
   out.textContent = text;
 
   copyBtn.addEventListener("click", function () {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) {
+      copyLabel.textContent = "Copy unavailable";
+      return;
+    }
     navigator.clipboard.writeText(text).then(function () {
-      copyBtn.textContent = "Copied!";
-      setTimeout(function () { copyBtn.textContent = "Copy text"; }, 1800);
+      copyLabel.textContent = "Copied";
+      setTimeout(function () { copyLabel.textContent = "Copy text"; }, 1800);
     }).catch(function () {
-      copyBtn.textContent = "Couldn't copy";
+      copyLabel.textContent = "Couldn't copy";
+      setTimeout(function () { copyLabel.textContent = "Copy text"; }, 1800);
     });
   });
 })();
